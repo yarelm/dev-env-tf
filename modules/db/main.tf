@@ -1,8 +1,10 @@
-provider "google" {
-  project = "{{YOUR GCP PROJECT}}"
-  region  = "us-central1"
-  zone    = "us-central1-c"
-  credentials = var.google_credentials
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/google"
+      version = ">= 3.51.0"
+    }
+  }
 }
 
 resource "google_sql_database_instance" "master" {
