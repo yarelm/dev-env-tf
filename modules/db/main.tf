@@ -20,6 +20,6 @@ resource "google_sql_database_instance" "master" {
 
 resource "google_sql_database" "database" {
   for_each = toset(var.tenants)
-  name     = "${each.key}"
+  name     = each.key
   instance = google_sql_database_instance.master.name
 }
