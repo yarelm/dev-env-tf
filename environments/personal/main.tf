@@ -16,11 +16,11 @@ module "db" {
   source = "../../modules/db"
   region = local.region
   name = "personal"
-  tenants = var.tenants
+  tenants = local.tenants
 }
 
 module "pubsub" {
   source = "../../modules/pubsub"
-  for_each = toset(var.tenants)
+  for_each = toset(local.tenants)
   env = each.key
 }
