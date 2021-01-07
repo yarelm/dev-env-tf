@@ -17,3 +17,9 @@ resource "google_sql_database_instance" "master" {
     tier = var.tier
   }
 }
+
+resource "google_sql_database" "database" {
+  for_each = toset(var.tenants)
+  name     = "${each.key}"
+  instance = google_sql_database_instance.master.name
+}

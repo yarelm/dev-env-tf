@@ -13,7 +13,7 @@ provider "google" {
 
 module "db" {
   source = "../../modules/db"
-  region = "us-central1"
-  name = "master-instance"
+  region = local.region
+  name = "dev-instance"
 
 }
