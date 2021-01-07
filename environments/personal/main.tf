@@ -22,6 +22,7 @@ module "pg_data" {
   source = "../../modules/pg_data"
   for_each = toset(local.tenants)
   env = each.key
+  instance_name = module.pg.instance_name
 }
 
 module "pubsub" {

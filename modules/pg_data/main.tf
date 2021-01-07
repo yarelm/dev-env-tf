@@ -9,10 +9,10 @@ terraform {
 
 resource "google_sql_database" "payment" {
   name     = "${var.env}-payment"
-  instance = google_sql_database_instance.master.name
+  instance = var.instance_name
 }
 
 resource "google_sql_database" "delivery" {
   name     = "${var.env}-delivery"
-  instance = google_sql_database_instance.master.name
+  instance = var.instance_name
 }
