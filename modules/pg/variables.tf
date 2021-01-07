@@ -14,9 +14,3 @@ variable "name" {
   type = string
   default = "my-instance"
 }
-
-variable "tenants" {
-  description = "a database is created per tenant on the same instance"
-  type = list(string)
-  default = ["global"]
-}

@@ -12,11 +12,16 @@ provider "google" {
   credentials = var.google_credentials
 }
 
-module "db" {
-  source = "../../modules/db"
+module "pg" {
+  source = "../../modules/pg"
   region = local.region
   name = "personal"
-  tenants = local.tenants
+}
+
+module "pg_data" {
+  source = "../../modules/pg_data"
+  for_each = toset(local.tenants)
+  env = each.key
 }
 
 module "pubsub" {
