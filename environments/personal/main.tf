@@ -7,5 +7,5 @@ provider "google" {
 }
 
 module "db" {
-    source = "./modules/db"
+    source = "../../modules/db"
 }
