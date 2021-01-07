@@ -1,6 +1,6 @@
 
 provider "google" {
-  project = "{{YOUR GCP PROJECT}}"
+  project = var.gcp_project
   region  = "us-central1"
   zone    = "us-central1-c"
   credentials = var.google_credentials
