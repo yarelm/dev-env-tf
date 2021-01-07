@@ -14,6 +14,6 @@ resource "google_sql_database_instance" "master" {
   deletion_protection = false
 
   settings {
-    tier = var.db_tier
+    tier = var.tier
   }
 }
