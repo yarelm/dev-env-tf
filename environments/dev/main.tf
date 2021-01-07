@@ -14,6 +14,6 @@ provider "google" {
 module "db" {
   source = "../../modules/db"
   region = local.region
-  name = "dev-instance"
+  name = "dev"
 
 }

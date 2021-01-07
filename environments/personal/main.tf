@@ -14,6 +14,6 @@ provider "google" {
 module "db" {
   source = "../../modules/db"
   region = local.region
-  name = "master-instance"
+  name = "personal"
   tenants = ["moshe", "simon"]
 }
