@@ -2,6 +2,7 @@
 locals {
   region = "us-central1"
   zone   = "us-central1-c"
+  tenants = ["moshe", "simon"]
 }
 
 provider "google" {
@@ -15,5 +16,11 @@ module "db" {
   source = "../../modules/db"
   region = local.region
   name = "personal"
-  tenants = ["moshe", "simon"]
+  tenants = var.tenants
+}
+
+module "pubsub" {
+  source = "../../modules/pubsub"
+  for_each = toset(var.tenants)
+  env = each.key
 }
