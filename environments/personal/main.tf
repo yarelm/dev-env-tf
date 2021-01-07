@@ -35,7 +35,6 @@ module "pubsub" {
 module "scheduler" {
   source = "../../modules/scheduler"
   count = length(local.tenants)
-  # for_each = toset(module.pubsub[*].delivery_topic_id)
   env = local.tenants[count.index]
   topic_id = values(module.pubsub)[count.index].delivery_topic_id
 }
