@@ -17,7 +17,7 @@ resource "google_sql_database_instance" "master" {
     tier = var.tier
   }
 
-  labels = {
+  user_labels = {
     env = var.env
   }
 }
