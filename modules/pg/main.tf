@@ -15,9 +15,11 @@ resource "google_sql_database_instance" "master" {
 
   settings {
     tier = var.tier
+
+    user_labels = {
+      env = var.env
+    }
   }
 
-  user_labels = {
-    env = var.env
-  }
+  
 }
