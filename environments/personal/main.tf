@@ -15,7 +15,7 @@ provider "google" {
 module "pg" {
   source = "../../modules/pg"
   region = local.region
-  name = "personal"
+  name = "personal-db"
 }
 
 module "pg_data" {
