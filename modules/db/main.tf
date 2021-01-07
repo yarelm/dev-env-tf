@@ -5,11 +5,6 @@ provider "google" {
   credentials = var.google_credentials
 }
 
-variable "google_credentials" {
-  description = "the contents of a service account key file in JSON format."
-  type = string
-}
-
 resource "google_sql_database_instance" "master" {
   name             = "master-instance"
   database_version = "POSTGRES_11"
