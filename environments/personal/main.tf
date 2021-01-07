@@ -15,5 +15,5 @@ module "db" {
   source = "../../modules/db"
   region = local.region
   name = "master-instance"
-
+  tenants = ["moshe", "simon"]
 }
