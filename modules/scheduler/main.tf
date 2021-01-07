@@ -14,7 +14,7 @@ resource "google_cloud_scheduler_job" "delivery" {
 
   pubsub_target {
     # topic.id is the topic's full resource name.
-    topic_name = env.topic_id
+    topic_name = var.topic_id
     data       = base64encode("is your delivery ready?")
   }
 }
