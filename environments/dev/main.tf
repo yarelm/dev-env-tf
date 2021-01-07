@@ -14,6 +14,6 @@ provider "google" {
 module "db" {
   source = "../../modules/db"
   region = "us-central1"
-  name = "my_db"
+  name = "master-instance"
 
 }
